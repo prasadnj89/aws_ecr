@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build image') {
       steps {
-        dockerNode(image: 'https://github.com/prasadnj89/my-dockerimage/blob/main/Dockerfile')
+        sh 'docker.build registry + ":$BUILD_NUMBER"'
       }
     }
 
