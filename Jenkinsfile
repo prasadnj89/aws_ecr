@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Build image') {
+    stage('Clone git') {
       steps {
-        load 'https://github.com/prasadnj89/my-dockerimage.git/Dockerfile'
+        git(url: 'https://github.com/prasadnj89/my-dockerimage/blob/main/Dockerfile', branch: '/main')
       }
     }
 
